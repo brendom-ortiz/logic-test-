@@ -1,5 +1,5 @@
 algoritmo "IntercalacaoVetores"
-// Função: Intercalar dois vetores de 10 elementos
+
 
 var
    vetor1: vetor[0..9] de inteiro
@@ -8,14 +8,14 @@ var
    i, j: inteiro
 
 inicio
-   // Preenchendo o primeiro vetor
+
    escreval("=== PREENCHENDO VETOR 1 ===")
    para i de 0 ate 9 faca
       escreva("Digite o elemento ", i, " do vetor 1: ")
       leia(vetor1[i])
    fimpara
 
-   // Preenchendo o segundo vetor
+
    escreval("")
    escreval("=== PREENCHENDO VETOR 2 ===")
    para i de 0 ate 9 faca
@@ -23,7 +23,7 @@ inicio
       leia(vetor2[i])
    fimpara
 
-   // Intercalando os vetores
+
    j <- 0
    para i de 0 ate 9 faca
       resultado[j] <- vetor1[i]
@@ -32,7 +32,7 @@ inicio
       j <- j + 1
    fimpara
 
-   // Exibindo o vetor 1
+
    escreval("")
    escreval("=== VETOR 1 ===")
    escreva("Indices:  ")
@@ -45,7 +45,7 @@ inicio
       escreva(vetor1[i]:4)
    fimpara
 
-   // Exibindo o vetor 2
+
    escreval("")
    escreval("")
    escreval("=== VETOR 2 ===")
@@ -59,7 +59,6 @@ inicio
       escreva(vetor2[i]:4)
    fimpara
 
-   // Exibindo o resultado da intercalação
    escreval("")
    escreval("")
    escreval("=== VETOR RESULTANTE (INTERCALADO) ===")

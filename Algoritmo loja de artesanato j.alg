@@ -1,5 +1,5 @@
 algoritmo "Loja de Artesanato"
-// Loja de artesanato com cálculo de vendas e comissão
+
 var
 descricao: vetor[0..9] de caractere
 precoUnitario: vetor[0..9] de real
@@ -11,10 +11,10 @@ quantidadeTotal: inteiro
 maisVendidoQtd, maisVendidoPos: inteiro
 
 inicio
-// Definindo constantes
+
 salarioBase <- 500.00
 
-// Preenchendo nomes dos produtos
+
 descricao[0] <- "Cesta de Vime"
 descricao[1] <- "Vaso de Ceramica"
 descricao[2] <- "Tapete Artesanal"
@@ -26,45 +26,43 @@ descricao[7] <- "Escultura em Madeira"
 descricao[8] <- "Jogo de Toalhas"
 descricao[9] <- "Chaveiro Artesanal"
 
-// Gerando preços e quantidades aleatórios
+
 escreval("========================================")
 escreval("    LOJA DE ARTESANATO - GERACAO DE DADOS")
 escreval("========================================")
 escreval()
 
 para i de 0 ate 9 faca
-   // Gera preço entre 10 e 200
+
    precoUnitario[i] <- 10 + (randi(191))
-   // Gera quantidade entre 1 e 12
+
    quantidade[i] <- 1 + (randi(12))
 fimpara
 
-// Inicializando variáveis de totais
+
 faturamentoTotal <- 0
 quantidadeTotal <- 0
 maisVendidoQtd <- 0
 maisVendidoPos <- 0
 
-// Calculando valores totais por produto
+
 para i de 0 ate 9 faca
    valorTotal[i] <- precoUnitario[i] * quantidade[i]
    faturamentoTotal <- faturamentoTotal + valorTotal[i]
    quantidadeTotal <- quantidadeTotal + quantidade[i]
 
-   // Verificando produto mais vendido
+
    se quantidade[i] > maisVendidoQtd entao
       maisVendidoQtd <- quantidade[i]
       maisVendidoPos <- i
    fimse
 fimpara
 
-// Calculando comissão
+
 comissao <- faturamentoTotal * 0.5
 salarioTotal <- salarioBase + comissao
 
-// ===========================================
-// LETRA A: Resumo de quantidade e faturamento
-// ===========================================
+
 escreval()
 escreval("========================================")
 escreval("  A) RESUMO DAS VENDAS")
@@ -73,9 +71,6 @@ escreval("Quantidade total de itens vendidos: ", quantidadeTotal, " unidades")
 escreval("Faturamento total das vendas: R$ ", faturamentoTotal:6:2)
 escreval()
 
-// ===========================================
-// LETRA B: Detalhamento por produto
-// ===========================================
 escreval("========================================")
 escreval("  B) DETALHAMENTO POR PRODUTO")
 escreval("========================================")
@@ -92,9 +87,6 @@ fimpara
 
 escreval()
 
-// ===========================================
-// LETRA C: Faturamento total e comissão
-// ===========================================
 escreval("========================================")
 escreval("  C) REMUNERACAO DO VENDEDOR")
 escreval("========================================")
@@ -105,9 +97,6 @@ escreval("----------------------------------------")
 escreval("SALARIO TOTAL A RECEBER: R$ ", salarioTotal:6:2)
 escreval()
 
-// ===========================================
-// LETRA D: Produto mais vendido
-// ===========================================
 escreval("========================================")
 escreval("  D) PRODUTO MAIS VENDIDO")
 escreval("========================================")

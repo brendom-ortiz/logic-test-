@@ -1,8 +1,4 @@
 algoritmo "CorrecaoProvas"
-// Função: Corrigir provas de múltipla escolha
-// Autor:
-// Data: 17/11/2025
-
 var
    gabarito: vetor[1..10] de caractere
    nomes: vetor[1..100] de caractere
@@ -14,7 +10,7 @@ var
    resposta: caractere
 
 inicio
-   // Definindo o gabarito
+
    escreval("=== SISTEMA DE CORREÇÃO DE PROVAS ===")
    escreval("")
    escreval("Digite o gabarito (3 alternativas por prova):")
@@ -25,13 +21,11 @@ inicio
       leia(gabarito[i])
    fimpara
 
-   // Entrada do número de alunos
    escreval("")
    escreva("Quantos alunos fizeram a prova? ")
    leia(numAlunos)
    escreval("")
 
-   // Entrada dos dados dos alunos
    para i de 1 ate numAlunos faca
       escreval("--- ALUNO ", i, " ---")
       escreva("Nome: ")
@@ -45,7 +39,6 @@ inicio
       escreval("")
    fimpara
 
-   // Corrigindo as provas
    somaNotas <- 0
    somaAprovados <- 0
    aprovados <- 0
@@ -53,25 +46,24 @@ inicio
    para i de 1 ate numAlunos faca
       acertos <- 0
 
-      // Contando acertos
+
       para j de 1 ate 10 faca
          se respostas[i,j] = gabarito[j] entao
             acertos <- acertos + 1
          fimse
       fimpara
 
-      // Calculando nota
+
       notas[i] <- acertos
       somaNotas <- somaNotas + notas[i]
 
-      // Verificando aprovação
+
       se notas[i] >= 6 entao
          aprovados <- aprovados + 1
          somaAprovados <- somaAprovados + notas[i]
       fimse
    fimpara
 
-   // Calculando médias
    mediaGeral <- somaNotas / numAlunos
 
    se aprovados > 0 entao
@@ -80,7 +72,6 @@ inicio
       mediaAprovados <- 0
    fimse
 
-   // Exibindo resultados
    escreval("")
    escreval("========================================")
    escreval("         RESULTADO DAS PROVAS")
@@ -95,7 +86,7 @@ inicio
    para i de 1 ate numAlunos faca
       escreva(nomes[i])
 
-      // Ajuste de espaçamento
+
       para j de 1 ate (18 - compr(nomes[i])) faca
          escreva(" ")
       fimpara
@@ -118,7 +109,7 @@ inicio
    escreval("Quantidade de alunos reprovados: ", (numAlunos - aprovados))
    escreval("")
 
-   // Exibindo notas aleatórias (gerando gabarito exemplo)
+
    escreval("=== DETALHAMENTO DAS RESPOSTAS ===")
    para i de 1 ate numAlunos faca
       escreval("")
